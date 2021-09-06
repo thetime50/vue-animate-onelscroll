@@ -12,6 +12,17 @@ function getScrollEl(el,binding){
         return scrollEl
 }
 
+function removeEvent(el) {
+  let scrollEl = el._onelscroll_scrollEl
+  let scrollCb = el._onelscroll_scrollCb
+  if (scrollEl && scrollCb) {
+    scrollEl.removeEventListener('scroll', scrollCb)
+  }
+  el._onelscroll_scrollEl = null
+  el._onelscroll_scrollCb = null
+  return scrollCb // 可能后面有用
+}
+
 export default {
   ScrollAnimate,
   install(Vue) {
@@ -28,12 +39,18 @@ export default {
           lastScrollTop = scrollTop <= 0 ? 0 : scrollTop
         }
         el._onelscroll_scrollCb = scrollCb
+        el._onelscroll_scrollEl = scrollEl
         scrollEl.addEventListener('scroll', scrollCb, false)
       },
       unbind(el, binding, vnode, oldVnode) {
-        let scrollEl = getScrollEl(el, binding)
-        el._onelscroll_scrollCb && scrollEl.removeEventListener('scroll', el._onelscroll_scrollCb)
-        el._onelscroll_scrollCb = null
+        removeEvent(el)
+      },
+      update(el, binding, vnode, oldVnode) {
+          let scrollEl = getScrollEl(el, binding)
+          let scrollCb = removeEvent(el)
+          el._onelscroll_scrollCb = scrollCb
+          el._onelscroll_scrollEl = scrollEl
+          scrollEl.addEventListener('scroll', scrollCb, false)
       },
     })
   }

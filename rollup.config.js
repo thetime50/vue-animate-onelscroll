@@ -7,7 +7,7 @@ export default [
     input: 'src/index.js',
     output: {
       format: 'es',
-      file: 'lib/vue-animate-onscroll.es.js'
+      file: 'lib/vue-animate-onelscroll.es.js'
     },
     plugins: [ terser() ]
   },
@@ -15,7 +15,7 @@ export default [
     input: 'src/index.js',
     output: {
       format: 'cjs',
-      file: 'lib/vue-animate-onscroll.cjs.js'
+      file: 'lib/vue-animate-onelscroll.cjs.js'
     },
     plugins: [ terser() ]
   }
