@@ -22,6 +22,14 @@ package.json 中的版本号2.0.0变为 2.0.1;
 
 **npm publish**
 
+
+```
+403 Forbidden - PUT http://registry.npmjs.org/vue-animate-onelscroll - Forbidden
+npm ERR! 403 In most cases, you or one of your dependencies are requesting
+npm ERR! 403 a package version that is forbidden by your security policy.
+```
+邮箱验证没通过
+
 ### prepublishOnly
 tag 分为 annotated 和 lightweight 两种类型
 
