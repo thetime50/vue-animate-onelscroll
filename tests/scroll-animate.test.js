@@ -1,4 +1,4 @@
-const { ScrollAnimate } = require('../lib/vue-animate-onscroll.cjs')
+const { ScrollAnimate } = require('../lib/vue-animate-onelscroll.cjs')
 const createFixture = require('./utils')
 
 describe('ScrollAnimate', function() {
