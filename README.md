@@ -66,6 +66,7 @@ Or use two different animations for each scroll direction:
 Note that by providing both `up` and `down` directions, the `repeat` modifier is implicitly in effect.
 
 ## Demo
+todo  
 Live demo [here](https://vue-animate-onscroll.netlify.com/).
 
 ## License
