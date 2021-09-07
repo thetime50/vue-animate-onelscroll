@@ -1,6 +1,8 @@
 # vue-animate-onelscroll
 A simple Vue directive that animates elements as they scroll into view.
 
+[![View UI](https://img.shields.io/npm/v/view-design.svg?style=flat)](https://www.npmjs.org/package/vue-animate-onelscroll)
+
 ## Installation
 
 ```sh
@@ -64,6 +66,60 @@ Or use two different animations for each scroll direction:
 <div v-onelscroll="{down: 'animated flip', up: 'animated rotateOut' }">Animate me upon scroll forever</div>
 ```
 Note that by providing both `up` and `down` directions, the `repeat` modifier is implicitly in effect.
+
+## 新增特性
+### scrollEl参数
+可以指定滚动元素scrollEl \[undefined, null, string, Element\]  
+- 如果未指定滚动元素，默认监听window的滚动事件，并且v-onelscroll指令可以用在任何元素上
+- 如果scrollEl的值是null 不会进行初始化
+- 如果指定了 scrollEl 那么绑定的元素要能够通过 el.offsetTop直接获取到在容器中的位置
+- 如果scrollEl的值是string 则会通过 document.querySelector 获取dom
+- scrollEl 可以初始化为 null mounted 后直接绑定Dom元素
+
+```html
+<template>
+    <div class="component-scroll-animate flex-layout">
+        <div class="scroll-wrap flex-auto scroll-all" ref="scrollWrap">
+            <div class="content"> <!-- 这一层元素可以不需要 -->
+                <div class="item" v-onelscroll="{
+                        scrollEl:scrollEl, 
+                        down: 'animated zoomInRight', 
+                        up: 'animated flipInX' 
+                    }"
+                >item</div>
+            </div>
+        </div>
+    </div>
+</template>
+
+<script>
+export default {
+    name: "scroll-animate",
+    data() {
+        return {
+            scrollEl:null,
+        };
+    },
+    mounted () {
+        this.$nextTick(()=>{
+            this.scrollEl = this.$refs.scrollWrap
+        })
+    }
+};
+</script>
+
+```
+
+### edge修饰符
+
+添加.edge修饰符，只在进入/退出视图区域时触发动画，不会在视图区域中间触发
+```html
+  <div class="item" v-onelscroll.repeat.edge="{
+          down: 'animated zoomInRight', 
+          up: 'animated flipInX' 
+      }"
+  >item</div>
+```
 
 ## Demo
 todo  
