@@ -1,7 +1,7 @@
 # vue-animate-onelscroll
 A simple Vue directive that animates elements as they scroll into view.
 
-[![View UI](https://img.shields.io/npm/v/view-design.svg?style=flat)](https://www.npmjs.org/package/vue-animate-onelscroll)
+[![View UI](https://img.shields.io/npm/v/vue-animate-onelscroll.svg?style=flat)](https://www.npmjs.org/package/vue-animate-onelscroll)
 
 ## Installation
 
