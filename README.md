@@ -122,8 +122,9 @@ export default {
 ```
 
 ## Demo
-todo  
-Live demo [here](https://vue-animate-onelscroll.netlify.com/).
+
+Live demo [here](https://thetime50.github.io/front-laboratory/laboratory/dist/index.html#/animation/scroll-animate).  
+Live demo [here -ch](http://thetime50.com/front-laboratory/laboratory/dist/index.html#/animation/scroll-animate).
 
 ## License
 
