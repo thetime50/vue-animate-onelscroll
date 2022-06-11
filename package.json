@@ -12,7 +12,7 @@
     "deploy": "npm run test && npm version patch && npm publish",
     "prepublishOnly": "git push --follow-tags"
   },
-  "author": "yev",
+  "author": "thetime50",
   "repository": {
     "type": "git",
     "url": "https://github.com/thetime50/vue-animate-onelscroll"

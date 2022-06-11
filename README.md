@@ -67,6 +67,11 @@ Or use two different animations for each scroll direction:
 ```
 Note that by providing both `up` and `down` directions, the `repeat` modifier is implicitly in effect.
 
+
+---
+
+fork by https://github.com/vycoder/vue-animate-onscroll
+
 ## 新增特性
 ### scrollEl参数
 可以指定滚动元素scrollEl \[undefined, null, string, Element\]  
